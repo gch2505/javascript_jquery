@@ -1,0 +1,15 @@
+1. 깃허브에 저장소 만들고 자료 업로드하기
+1) 깃계정에 접속하여 '브런치 이름'을 적고 '설명'을 적고 'readme'항목 체크
+2) setting메뉴 클릭, 'page'항목에서 branch 'main'선택하고 'save'
+3) 레포지토리 주소 복사 https://github.com/gch2505/javascript_jquery.git
+
+2. 내컴퓨터에서 만든 index.html과 모든 문서 것저장소에 업로드하기
+-index.html문서가 있는 상위폴더에서 마우스 오른쪽메뉴 'git bash' 실행
+-git init(초기화) : 버전관리를 하겠다는 뜻
+-git status : 상태확인(빨강)
+-git add . :모든 문서와 폴더를 관리하겠다 (초록)
+-git status : 상태확인(초록)
+-git remote add origin 주소 붙여넣기
+-git branch -m master main(마스터 브런치명을 main으로 변경)
+-git commit -m '자바스크립트 수업'
+-git push origin +main

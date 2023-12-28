@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습3. 버튼 클릭하면 모달윈도 띄우기</title>
+  <!--아이콘폰트 주소-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    #wrap{
+      width:100%; height:100%;
+      position:fixed;
+      top:0; left:0;
+      background:rgba(0,0,0,.7);
+      transition:.3s;
+      opacity:0%;
+      display:none;
+    }
+    .popup{
+      width:360px;
+      margin:0 auto;
+      position:absolute;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+    }
+    .popup span{
+      display:block;
+      background:rgba(0,0,0,.3);
+      color:#fff;
+      text-align:center;
+      padding:5px 8px;
+      font-size:30px;
+      position:absolute;
+      top:0;right:0;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <h3>버튼 클릭하면 모달윈도 띄우기</h3>
+  <div id="wrap">
+    <div class="popup">
+      <img src="./images/banner.jpg" alt="이미지">
+      <span class="fas fa-close" id="close_btn"></span>
+    </div>
+  </div>
+  <input type="button" value="광고 띄우기" id="modal_btn">
+
+  <script>
+    const modal = document.getElementById('wrap');
+    const c_btn = document.getElementById('close_btn');
+    const m_btn = document.getElementById('modal_btn');
+
+    m_btn.addEventListener('click', function(){
+      setTimeout(opacity_100, 300);
+      modal.style.display='block';
+    });
+    function opacity_100(){
+      modal.style.opacity='100%';
+    }
+
+    c_btn.addEventListener('click', function(){
+      setTimeout(display_none, 300);
+      modal.style.opacity='0';
+    })
+    function display_none(){
+      modal.style.display='none';
+    }
+  </script>
+</body>
+</html>

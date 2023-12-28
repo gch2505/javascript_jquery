@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 실전예제_캐러셀(carousel)슬라이드</title>
+  <!--아이콘폰트 주소-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!--슬라이드 스크립트-->
+  <script src="./script/slide.js" defer></script>
+  <style>
+    *{margin:0; padding:0;}
+    ul, li{list-style:none;}
+    a{text-decoration:none; color:#333;}
+    h2, p{padding:10px;}
+    .slide_wrapper{
+      width:1200px;
+      height:468px;
+      margin:0 auto;
+      background:#ccc;
+      border:3px solid #f00;
+      position:relative;
+    }
+    .slide{
+      position:relative;
+      display:flex;
+      left:0px;
+      width:2040px;
+      transition:.5s;
+    }
+    .slide li{margin-right:60px;}
+    .slide li:last-child{margin-right:0;}
+
+    /*좌, 우 버튼*/
+    #l_btn, #r_btn{
+      padding:10px 8px;
+      background:rgba(0,0,0,.7);
+      position:absolute; top:45%;
+      color:#fff;
+    }
+    #l_btn{left:0;}
+    #r_btn{right:0;}
+    .fas{
+      font-size:30px;
+      position:absolute; bottom:10px;
+      color:#fff;
+    }
+    .fa-stop{right:60px;}
+    .fa-play{right:20px;}
+  </style>
+</head>
+<body>
+  <h2>자바스크립트 실전예제_캐러셀(carousel)슬라이드</h2>
+  <p>캐러셀(carousel)은 CSS 3D트랜스폼과 약간의 JavaScript로 만들어진 일련의 콘텐츠를 순환시키기 위한 슬라이드쇼이다. 일련의 '이미지', '텍스트' 혹은 '사용자 정의 마크업'으로 동작한다. 그리고 '이전/다음'의 컨트롤이나 '위치 표시(인디게이터, indicator)'도 지원한다.</p>
+
+  <article class="slide_wrapper">
+    <ul class="slide">
+      <li>
+        <div><a href="#" title=""><img src="./images/banner01.jpg" alt="이미지1"></a></div>
+      </li>
+      <li>
+        <div><a href="#" title=""><img src="./images/banner02.jpg" alt="이미지1"></a></div>
+      </li>
+      <li>
+        <div><a href="#" title=""><img src="./images/banner03.jpg" alt="이미지1"></a></div>
+      </li>
+      <li>
+        <div><a href="#" title=""><img src="./images/banner04.jpg" alt="이미지1"></a></div>
+      </li>
+      <li>
+        <div><a href="#" title=""><img src="./images/banner05.jpg" alt="이미지1"></a></div>
+      </li>
+    </ul>
+    <a href="#" title="이전" id="l_btn">이전</a>
+    <a href="#" title="다음" id="r_btn">다음</a>
+    <i class="fas fa-stop"></i>
+    <i class="fas fa-play"></i>
+  </article>
+  
+
+</body>
+</html>

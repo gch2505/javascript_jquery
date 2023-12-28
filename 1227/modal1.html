@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습1. 배경없이 광고만띄우기</title>
+  <style>
+    #popup{
+      width:360px;
+      margin:0 auto;
+      position:absolute;
+      top:50%; left:50%;
+      transform: translate(-50%,-50%);
+      transition:.5s;
+    }
+    #popup img{
+      display:block;
+      width:100%;
+    }
+    #popup input{
+      width:100%;
+      display:block;
+      border:none;
+      background:#000;
+      color:#fff;
+      text-align:center;
+      line-height:50px;
+      font-size:16px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+    <h3>배경없이 광고만띄우기</h3>
+    <div id="popup">
+      <a href="#" title="페이지 바로가기"><img src="./images/banner02.jpg" alt="배경없는광고"></a>
+      <input type="button" value="닫기" id="close_btn">
+    </div>
+
+    <script>
+      const popup = document.getElementById('popup');
+      const c_btn = document.getElementById('close_btn');
+
+      c_btn.addEventListener('click', function(){
+        popup.style.opacity='0';
+        setTimeout(display_none,500);
+      })
+      function display_none(){
+        popup.style.display='none';
+      }
+    </script>
+</body>
+</html>

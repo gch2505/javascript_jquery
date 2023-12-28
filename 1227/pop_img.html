@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팝업</title>
+  <style>
+    *{padding:0; margin:0;}
+    img{
+      display:block;
+      margin:0 auto;
+    }
+    #close_btn{
+      display:block;
+      width:100%;
+      color:#fff;
+      background:#000;
+      text-align:center;
+      line-height:50px;
+      border:none;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href="#" title=""><img src="./images/banner.jpg" alt="팝업 이미지"></a>
+    <input type="button" value="닫기" id="close_btn">
+  </div>
+
+  <script>
+    let c_btn = document.getElementById('close_btn');
+    c_btn.addEventListener('click', function(){
+      close();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제_배열객체를 사용한 배너 만들기</title>
+  <!--아이콘폰트 주소-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    #banner{
+      width:325px;
+      height:704px;
+      border:2px solid #333;
+      margin:0 auto;
+      position:relative;
+    }
+
+    h2{text-align:center;}
+    h2:first-child{
+      margin-bottom:0;
+      text-indent:-70px;
+    }
+    h2:nth-child(2){
+      margin-top:0;
+      text-indent:70px;
+      color:rgb(88, 197, 224);
+    }
+
+    .fas{
+      font-size:30px;
+      color:rgba(0,0,0,.5);
+      position:absolute;
+      top:50%;
+    }
+    .fa-angle-left{left:5px;}
+    .fa-angle-right{right:5px;}
+  </style>
+</head>
+<body>
+  <div id="banner">
+    <h2>HOT! TREND</h2>
+    <h2>추천 광고상품</h2>
+    <img src="./images3/product01.png" alt="배너 이미지" id="banner_img">
+    <span class="fas fa-angle-left" id="left"></span>
+    <span class="fas fa-angle-right" id="right"></span>
+  </div>
+
+  <script>
+    let b_img = ['01.png','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.png','09.jpg','10.png','11.jpg','12.jpg','13.png','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg'];
+    let lan_b = Math.floor(Math.random()*18);
+    let lb = document.getElementById('left');
+    let rb = document.getElementById('right');
+
+    document.getElementById('banner_img').src="./images3/product"+b_img[lan_b];
+    lb.addEventListener('click', function(){
+    });
+    rb.addEventListener('click', function(){
+    });
+
+  </script>
+</body>
+</html>
